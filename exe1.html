@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function doubleEvenNumbers(val) {
+      if (val % 2 === 0) 
+        return val * 2;
+      
+    }
+    function eraseUndefined(val){
+      return val != undefined
+    }
+    const myNumbers = [1, 2, 3, 4];
+    var output = myNumbers.map(doubleEvenNumbers)
+    var output2 = output.filter(eraseUndefined)
+    console.log(output2); // Logs "[4, 8]" to the console
+    </script>
+</body>
+</html>
