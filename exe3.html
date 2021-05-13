@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const fruitBasket = [
+      'apple',
+      'lemon',
+      'grapefruit',
+      'lemon',
+      'banana',
+      'watermelon',
+      'lemon',
+    ];
+    var output = fruitBasket.filter(function(val) {
+      return val != 'lemon'
+    })
+    console.log('My mom bought me a fruit basket, containing' + output + '!')
+    </script>
+</body>
+</html>
