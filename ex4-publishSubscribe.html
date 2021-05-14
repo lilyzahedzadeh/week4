@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function createPublisher() {
+  const subscribers = [];
+  return {
+    subscribe(name) {
+      subscribers.push(name)
+    },
+    notify(message) {
+      subscribers.map(function(element) => {
+        element(message)
+      });
+    },
+  };
+}
+
+// A candidate subscriber function
+function consoleUpperCase(message) {
+  console.log(message.toUpperCase());
+}
+
+// Another candidate subscriber function
+function consoleLowerCase(message) {
+  console.log(message.toLowerCase());
+}
+
+// Create a publisher object
+const myPublisher = createPublisher();
+
+// Register three subscribers
+myPublisher.subscribe(console.log);
+myPublisher.subscribe(consoleUpperCase);
+myPublisher.subscribe(consoleLowerCase);
+
+var message = "Let's see what happens here!"
+myPublisher.notify(message);
+    
+
+// console.log(message)
+// consoleLowerCase(message)
+// consoleUpperCase(message)
+
+
+
+  </script>
+</body>
+</html>
